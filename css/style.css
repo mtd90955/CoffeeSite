@@ -1,0 +1,135 @@
+body {
+  /* background-color: white; */
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+/*************   Create the menubar using flexbox. *********************************/
+nav  {
+  background-color: #3c3c3c;
+  color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  padding: 0 20px 0 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.nav-item a {
+  text-decoration: none;
+  padding: 20px;
+  color: antiquewhite;
+}
+.nav-item:hover {
+  background-color: antiquewhite;
+}
+.nav-item:hover a {
+  color: #3c3c3c;
+  padding: 20px;
+}
+/******* Create banner section with background image and headings on top *****/
+.banner {
+  background-image:url("../images/home_banner-x489.png");
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 100%; */
+}
+.banner h1 {
+  font-family: 'Lobster', cursive;
+  text-shadow: 3px 3px 2px #474747;
+}
+
+/**********       Create 3 column layout         ************/
+.triple-col {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 1%;
+}
+
+.content-two a:link {
+  text-decoration: none;
+  color: rgb(156, 0, 0);
+}
+.content-two a:hover {
+  background-color: rgb(156, 0, 0);
+  color: white;
+}
+
+/************* Create 4 column layout    ************************/
+.quad-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding: 1%;
+}
+
+.button {
+  background-color: yellow;
+  border-radius: 5%;
+  margin: auto;
+  padding: 1% 5%;
+  width: max-content;
+  text-align: center;
+}
+
+.content-one, footer {
+  padding: 1%;
+  background-color: rgb(190, 190, 190);
+  /* width: 100%; */
+}
+
+.content-three img {
+  margin: 0 auto;
+  width: 100%;
+ }
+
+ .quad-col img {
+  margin: 0 auto;
+  width: 90%;
+ }
+
+/**************** create a verticle layout for mobile devices (smaller than 600px ).    *********/
+@media all and (max-width: 600px) {
+  .triple-col {
+    grid-template-columns: 100%;
+  }
+  .quad-col {
+    grid-template-columns: 100%;
+  }
+  nav {
+    flex-direction: column;
+    padding: 0;
+    align-content: space-evenly;
+  }
+  .nav-links {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-item {
+    padding: 10px;
+  }
+  .banner {
+    height: 300px;
+    justify-content: flex-end;
+  }
+}
